@@ -1,0 +1,19 @@
+<div>
+
+    
+    <h1>{{name}}</h1>
+    <p>{{headOffice}}</p>
+    <h1>All Cd Collection</h1>
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Language</th>
+            <th>Price</th>
+        </tr>
+        <tr ng-repeat='data in getDetails()'>
+            <td>{{data.title}}</td>
+            <td>{{data.language}}</td>
+            <td>{{data.price |currency:'₹ '}}</td>
+        </tr>
+    </table>
+</div>

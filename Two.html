@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body>
+<style>
+table, th , td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd) {
+  background-color: cyan;
+}
+table tr:nth-child(even) {
+  background-color: yellow;
+}
+</style>
+<div ng-app="myApp" ng-controller="myController">
+User Name: <input type="text" ng-model="username">
+
+City Name: <input type="text" ng-model="cityname">
+
+    <table>
+    <tr>
+	<td>
+    Entered username: {{username | uppercase }}
+    </td>
+	</tr>
+    <tr><td>
+        
+       Entered cityname: 
+{{cityname | uppercase}}
+        
+        </td></tr>
+     <tr><td>
+        
+      Todays Date: {{ today | date}}
+        
+        </td></tr>
+</table>
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myController', function($scope) {
+    $scope.username = "xxx";
+    $scope.cityname = "Bangalore";
+    $scope.today = new Date();
+});
+</script>
+
+</body>
+</html>

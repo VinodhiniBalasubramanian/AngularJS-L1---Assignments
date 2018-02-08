@@ -1,0 +1,37 @@
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
+    </script>
+</head>
+
+<body ng-app="">
+    <h1>Current bill before discount: 1000</h1>
+    
+<h1>Enter the Discount Code:  <input type="text" ng-model="discount" ng-focus="showDiscount=false"></h1>
+        <button ng-click="showDiscount=true">Apply coupon</button>
+
+<div ng-switch="discount" ng-show="showDiscount">
+  <div ng-switch-when="CDMK1610">
+     <h1>Final bill after applying promo code:
+                 {{1000- 1000*(10/100) }} </h1>
+               
+  </div>
+  <div ng-switch-when="CDMK1620">
+     <h1>Final bill after applying promo code:
+                  {{1000- 1000*(20/100) }}  </h1>
+               
+  </div>
+  <div ng-switch-when="CDMK1690">
+<h1>Final bill after applying promo code:
+                  {{ 1000-1000*(90/100) }}  </h1>
+               
+  </div>
+  <div ng-switch-default>
+     
+     <h1>Final bill after applying promo code:
+                  {{1000- 1000*(5/100) }}  </h1>
+               
+  </div>
+</div>
+</body>
+</html>

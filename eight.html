@@ -1,0 +1,39 @@
+<html lang="en" ng-app="myapp">
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script> 
+</head>
+<body>
+    <div id='holder' ng-controller='tablectrl'>
+        
+        <button ng-click='addRow()'>Generate 5 Table</button>
+        <table>
+            <tr ng-repeat="x in rows">
+                <td>5</td>
+                <td>x</td>
+                <td>{{x}}</td>
+                <td>=</td>
+                <td>{{5*x}}</td>
+            </tr>
+        </table>
+    </div>
+    
+<script>
+ var cont = angular.module('myapp', []);
+cont.controller('tablectrl', function ($scope) {
+
+    $scope.rows = [];
+  $scope.counter=1;
+  $scope.addRow = function() {
+    if($scope.counter<=10){
+    $scope.rows.push($scope.counter);
+    $scope.counter++;
+    }
+  }
+   
+});
+
+    
+    </script>
+</body>
+
+</html>

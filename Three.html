@@ -1,0 +1,33 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="myController">
+  <form>
+      <table>
+        <tr>
+         <td> <h1>Current System Date : {{ today | date }}
+            
+           </h1></td> 
+        </tr>
+
+     <tr>
+         <td><h2>click to get last modified date <button onclick="myFunction()">Last modified Date : </button> </h2> <p id="mod"></p></td><br>
+     </tr>
+      </table>
+  </form>
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myController', function($scope) {
+    $scope.today = new Date();
+});
+    function myFunction() {
+    var x = document.lastModified;
+    document.getElementById("mod").innerHTML = x;
+}
+</script>
+</body>
+</html>

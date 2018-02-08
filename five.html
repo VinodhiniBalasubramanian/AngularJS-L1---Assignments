@@ -1,0 +1,63 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<style>
+table, th , td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd) {
+  background-color: cyan;
+}
+table tr:nth-child(even) {
+  background-color: yellow;
+}
+</style>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="cdController"> 
+    <center>
+        <h1>Parlor Name: {{ name}} <br>
+        
+           HeadOffice: {{ city }}
+        
+        </h1>
+
+<table>
+  <tr ng-repeat="x in details.cd">
+       <td>{{ $index + 1 }}</td>
+    <td>{{ x.title }}</td>
+    <td>{{ x.language }}</td>
+      <td>{{ x.price }}</td>
+  </tr>
+</table>
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('cdController', function($scope) {
+    $scope.name="xxx Cd parlor";
+     $scope.city="xxx,yyy,Bangalore,Karnataka";
+      $scope.details = {
+               
+               
+               
+              cd :[{title:'Vedalam',language:'tamil',price:299}, 
+               {title:'Premam',language:'malayalam',price:346},
+               {title:'PK',language:'hindi',price:123},
+               {title:'Pokiri',language:'tamil',price:567},
+            {title:'Mersal',language:'tamil',price:890},
+               {title:'Ghajini',language:'tamil',price:098},
+            {title:'Dangal',language:'hindi',price:176},
+            {title:'Dangal',language:'hindi',price:055},
+               {title:'Bangalore days',language:'malayalam',price:267},
+             {title:'Thupaki',language:'tamil',price:889}
+               ]
+               
+        
+      } });   
+</script>
+
+</body>
+</html>

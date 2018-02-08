@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+
+<html ng-app="main">
+
+<head>
+    <link rel="stylesheet" href="css/main.css">
+  <script src="js/libs/angular.js"></script>
+  <script src="js/libs/angular-route.js"></script>
+  <script src="js/index.js"></script>
+  <title>Assignment7</title>
+</head>
+<style>
+    ul {
+    list-style-type: none;
+    margin: auto;
+    padding: 0;
+    overflow: hidden;
+        width: 30%;
+  
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: coral;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+</style>
+
+<body ng-controller="mainController">
+<center>
+
+    <div id='holder'>
+     
+      <ul class="navigator">
+        <li><a href="#">Home</a></li>
+        <li><a href="#allcds"> Allthe CD collection </a></li>
+        <li><a href="#newcds"> Latest CD collection</a></li>
+      </ul>
+     
+       <div class='content' ng-view></div>
+    </div>
+
+</center>
+  
+</body>
+
+</html>
